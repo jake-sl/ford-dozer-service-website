@@ -503,25 +503,19 @@ body {
   object-fit: cover;
 }
 
-.project-caption {
-  padding: 14px 0 0 0;
-}
-
-.project-caption .project-num {
+.project-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 12px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
   font-family: var(--font-sub);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--yellow);
-  text-transform: uppercase;
-}
-
-.project-caption .project-name {
-  font-family: var(--font-sub);
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--ash);
-  margin-top: 3px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
 }
 
 /* ─── BIDS / CTA BAND ─────────────────────────────────── */
@@ -633,6 +627,17 @@ body {
   gap: 0;
 }
 
+.contact-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--steel);
+  background: rgba(13, 13, 13, 0.85);
+}
+
 .contact-item {
   display: flex;
   align-items: flex-start;
@@ -678,6 +683,49 @@ body {
 
 a.contact-detail-value:hover { color: var(--yellow); }
 
+.contact-owner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-owner-photo img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.contact-owner-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-owner-title {
+  font-family: var(--font-head);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.contact-owner-subtitle {
+  font-family: var(--font-sub);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.contact-owner-copy p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ash);
+  margin: 0;
+}
+
 
 /* ─── FOOTER ──────────────────────────────────────────── */
 .site-footer {
@@ -709,6 +757,13 @@ a.contact-detail-value:hover { color: var(--yellow); }
 
 .footer-logo svg {
   width: 270px;
+  height: auto;
+}
+
+.footer-logo img {
+  display: block;
+  max-width: 220px;
+  width: 100%;
   height: auto;
 }
 
