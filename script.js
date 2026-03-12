@@ -10,24 +10,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// ── Form handler ─────────────────────────────────────
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  const orig = btn.textContent;
-  btn.textContent = 'Message Sent ✓';
-  btn.style.background = '#2a9d5c';
-  btn.style.borderColor = '#2a9d5c';
-  btn.style.color = '#fff';
-  setTimeout(() => {
-    btn.textContent = orig;
-    btn.style.background = '';
-    btn.style.borderColor = '';
-    btn.style.color = '';
-    e.target.reset();
-  }, 3500);
-}
-
 // ── Hamburger menu ────────────────────────────────────
 function toggleMobileNav() {
   const nav = document.getElementById('mobileNav');
