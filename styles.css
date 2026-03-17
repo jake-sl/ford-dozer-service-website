@@ -374,6 +374,14 @@ body {
 
 .section-title span { color: var(--yellow); }
 
+.section-intro {
+  max-width: 720px;
+  margin-top: -8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -486,7 +494,7 @@ body {
 /* ─── PROJECTS ────────────────────────────────────────── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   margin-top: 48px;
 }
@@ -494,14 +502,59 @@ body {
 .project-card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .project-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
+
+.project-card:hover img {
+  transform: scale(1.04);
+}
+
+/* ─── LIGHTBOX ──────────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#lightbox-close:hover { opacity: 1; }
 
 .project-label {
   position: absolute;
@@ -804,7 +857,7 @@ a.contact-detail-value:hover { color: var(--yellow); }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
 
   .services-grid { grid-template-columns: 1fr 1fr; }
-  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
   .credentials-grid { grid-template-columns: 1fr; }
 }
 
